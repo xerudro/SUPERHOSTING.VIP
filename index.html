@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Hosting</title>
+    <!-- Choose either Tailwind or Bootstrap -->
+    <!-- Tailwind CSS (Recommended for customization)-->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS (Alternatively) -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bg-gray-50">
+
+        <!-- Navbar -->
+        <nav class="bg-white shadow-md py-4">
+            <div class="container mx-auto flex items-center justify-between px-6">
+                <!-- Logo on the Left -->
+                <a href="/" class="flex-shrink-0 mr-4">
+                    <img src="images/logo.png" alt="Super Hosting Logo" class="h-14">
+                </a>
+    
+                <!-- Hamburger Menu Icon (Hidden on Large Screens) -->
+                <button id="menu-toggle" class="lg:hidden text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+    
+    
+                <!-- Centered Menu (Initially Hidden on Small Screens) -->
+                <div id="nav-links" class="nav-links lg:flex space-x-8 hidden lg:block">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-200">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-200">Hosting</a>
+                         <!-- Here is the sub menu with a fixed height and overflow-y: auto -->
+                        <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg hidden group-hover:block submenu">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Shared Hosting</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Managed Hosting</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">VPS Hosting: Unmanaged</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">VPS Hosting: Managed</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-200">Technology</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-200">Help Center</a>
+                </div>
+    
+                <!-- Right-aligned Actions -->
+                <div class="flex items-center space-x-4">
+                    <!-- Language selector -->
+                    <select class="bg-gray-100 border border-gray-300 text-gray-700 py-2 px-3 rounded leading-tight focus:outline-none focus:border-blue-500">
+                        <option value="en">EN</option>
+                        <option value="ro">RO</option>
+                    </select>
+    
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition duration-200">Login</a>
+                    <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Get Started</a>
+                </div>
+            </div>
+        </nav>
+        
+        <div id="content-wrapper">
+         <!-- Hero Section -->
+            <section class="py-20 text-center bg-gradient-to-r from-blue-100 to-gray-100">
+              <div class="container mx-auto">
+                <h1 class="text-4xl font-bold mb-6 text-gray-800">Experience Reliable Hosting Solutions</h1>
+                <p class="text-xl text-gray-600 mb-10">
+                  We provide top-tier web hosting services designed for performance and reliability.
+                </p>
+                  <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-3 px-8 rounded-md text-xl transition duration-200">View Plans</a>
+              </div>
+            </section>
+        
+        
+        <!-- Features -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto">
+                <!-- Centered Title -->
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Us?</h2>
+                
+                <!-- Centered Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+                    <div class="feature-card text-center p-6 bg-gray-100 rounded-lg shadow w-full md:w-auto">
+                        <img src="images/icon-speed.svg" alt="Speed Icon" class="h-12 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Lightning-Fast Servers</h3>
+                        <p class="text-gray-600">Our servers are optimized for maximum speed and performance.</p>
+                    </div>
+                    <div class="feature-card text-center p-6 bg-gray-100 rounded-lg shadow w-full md:w-auto">
+                        <img src="images/icon-uptime.svg" alt="Uptime Icon" class="h-12 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">99.9% Uptime Guarantee</h3>
+                        <p class="text-gray-600">Count on us to keep your website online and accessible 24/7.</p>
+                    </div>
+                    <div class="feature-card text-center p-6 bg-gray-100 rounded-lg shadow w-full md:w-auto">
+                        <img src="images/icon-support.svg" alt="Support Icon" class="h-12 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">24/7 Expert Support</h3>
+                        <p class="text-gray-600">Our support team is available to assist you with any issues.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+       <!-- Hosting Plans -->
+<section class="py-16 bg-gray-100">
+    <div class="hosting-plans-container container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Our Hosting Plans</h2>
+        
+        <h3 class="text-2xl font-semibold text-center text-gray-700 mb-8 shared-unmanaged-hosting-title">Shared Unmanaged Hosting</h3>
+         
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center shared-unmanaged-hosting">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Basic</h3>
+                    <p class="text-4xl font-bold text-blue-500 mb-4">€19<span class="text-sm font-normal"> /month</span></p>
+                    <ul class="list-disc list-inside mb-6 text-gray-600">
+                        <li>10 GB SSD Storage</li>
+                        <li>Unlimited Bandwidth</li>
+                        <li>1 Website</li>
+                        <li>Basic Support</li>
+                    </ul>
+                    <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Standard</h3>
+                    <p class="text-4xl font-bold text-blue-500 mb-4">€29<span class="text-sm font-normal"> /month</span></p>
+                    <ul class="list-disc list-inside mb-6 text-gray-600">
+                        <li>50 GB SSD Storage</li>
+                        <li>Unlimited Bandwidth</li>
+                        <li>5 Websites</li>
+                        <li>Premium Support</li>
+                    </ul>
+                    <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+                </div>
+                 <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Advanced</h3>
+                    <p class="text-4xl font-bold text-blue-500 mb-4">€49<span class="text-sm font-normal"> /month</span></p>
+                    <ul class="list-disc list-inside mb-6 text-gray-600">
+                        <li>100 GB SSD Storage</li>
+                        <li>Unlimited Bandwidth</li>
+                        <li>10 Websites</li>
+                        <li>VIP Support</li>
+                    </ul>
+                   <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+                 </div>   
+        </div>
+        
+         <h3 class="text-2xl font-semibold text-center text-gray-700 mb-8">Shared Managed Hosting</h3>
+
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
+                 <div class="bg-white rounded-lg shadow-md p-8">
+                     <h3 class="text-2xl font-semibold text-gray-700 mb-4">Basic</h3>
+                     <p class="text-4xl font-bold text-blue-500 mb-4">€19<span class="text-sm font-normal"> /month</span></p>
+                     <ul class="list-disc list-inside mb-6 text-gray-600">
+                         <li>10 GB SSD Storage</li>
+                         <li>Unlimited Bandwidth</li>
+                         <li>1 Website</li>
+                         <li>Basic Support</li>
+                     </ul>
+                     <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+                 </div>
+                 <div class="bg-white rounded-lg shadow-md p-8">
+                     <h3 class="text-2xl font-semibold text-gray-700 mb-4">Standard</h3>
+                     <p class="text-4xl font-bold text-blue-500 mb-4">€29<span class="text-sm font-normal"> /month</span></p>
+                     <ul class="list-disc list-inside mb-6 text-gray-600">
+                         <li>50 GB SSD Storage</li>
+                         <li>Unlimited Bandwidth</li>
+                         <li>5 Websites</li>
+                         <li>Premium Support</li>
+                     </ul>
+                     <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+                 </div>
+                  <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-4">Advanced</h3>
+                    <p class="text-4xl font-bold text-blue-500 mb-4">€49<span class="text-sm font-normal"> /month</span></p>
+                    <ul class="list-disc list-inside mb-6 text-gray-600">
+                        <li>100 GB SSD Storage</li>
+                        <li>Unlimited Bandwidth</li>
+                        <li>10 Websites</li>
+                        <li>VIP Support</li>
+                    </ul>
+                     <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+                 </div>
+         </div>
+
+    </div>
+</section>
+
+
+<!-- VPS Plans -->
+<section class="py-16 bg-gray-100">
+    <div class="hosting-plans-container container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Our VPS Plans</h2>
+        
+        <h3 class="text-2xl font-semibold text-center text-gray-700 mb-8 unmanaged-vps-hosting-title">Unmanaged VPS Hosting</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center unmanaged-vps-hosting">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Basic</h3>
+                <p class="text-4xl font-bold text-blue-500 mb-4">€19<span class="text-sm font-normal"> /month</span></p>
+                <ul class="list-disc list-inside mb-6 text-gray-600">
+                    <li>10 GB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>1 Website</li>
+                    <li>Basic Support</li>
+                </ul>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+             </div>
+             <div class="bg-white rounded-lg shadow-md p-8">
+                 <h3 class="text-2xl font-semibold text-gray-700 mb-4">Standard</h3>
+                 <p class="text-4xl font-bold text-blue-500 mb-4">€29<span class="text-sm font-normal"> /month</span></p>
+                  <ul class="list-disc list-inside mb-6 text-gray-600">
+                    <li>50 GB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                     <li>5 Websites</li>
+                      <li>Premium Support</li>
+                 </ul>
+                 <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+            </div>
+             <div class="bg-white rounded-lg shadow-md p-8">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Advanced</h3>
+                <p class="text-4xl font-bold text-blue-500 mb-4">€49<span class="text-sm font-normal"> /month</span></p>
+                <ul class="list-disc list-inside mb-6 text-gray-600">
+                    <li>100 GB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>10 Websites</li>
+                    <li>VIP Support</li>
+                </ul>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+            </div>
+         </div>
+        
+        <h3 class="text-2xl font-semibold text-center text-gray-700 mb-8">Managed VPS Hosting</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center">
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Basic</h3>
+                <p class="text-4xl font-bold text-blue-500 mb-4">€19<span class="text-sm font-normal"> /month</span></p>
+                 <ul class="list-disc list-inside mb-6 text-gray-600">
+                   <li>10 GB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>1 Website</li>
+                    <li>Basic Support</li>
+                  </ul>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-8">
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">Standard</h3>
+                 <p class="text-4xl font-bold text-blue-500 mb-4">€29<span class="text-sm font-normal"> /month</span></p>
+                <ul class="list-disc list-inside mb-6 text-gray-600">
+                     <li>50 GB SSD Storage</li>
+                     <li>Unlimited Bandwidth</li>
+                     <li>5 Websites</li>
+                    <li>Premium Support</li>
+                </ul>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-8">
+               <h3 class="text-2xl font-semibold text-gray-700 mb-4">Advanced</h3>
+                 <p class="text-4xl font-bold text-blue-500 mb-4">€49<span class="text-sm font-normal"> /month</span></p>
+                <ul class="list-disc list-inside mb-6 text-gray-600">
+                    <li>100 GB SSD Storage</li>
+                    <li>Unlimited Bandwidth</li>
+                    <li>10 Websites</li>
+                    <li>VIP Support</li>
+                </ul>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded transition duration-200">Choose plan</a>
+             </div>
+        </div>
+    </div>
+</section>
+        
+        
+        
+          <!-- Footer -->
+            <footer class="bg-gray-800 text-white py-8">
+             <div class="container mx-auto text-center">
+                 <p>© 2023 VIP Super Hosting. All rights reserved.</p>
+                </div>
+           </footer>
+        </div>
+
+
+  <!--  (Bootstrap JS) -->
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+   <script src="script.js"></script> <!-- Make sure the path is correct -->
+</body>
+</html>

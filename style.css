@@ -5,16 +5,16 @@
     font-family: var(--font-stack);
     color: var(--text-color);
     background-color: #f4f4f4;
-    line-height: 1.6; /* Îmbunătățește spațierea textului */
-  }
-  
+    line-height: 1.6;
+}
+
 /* ==========================
        Navbar Styles 
    ========================== */
 
 /* Navbar link hover effect */
 .nav-links a:hover {
-    text-shadow: 0 0 4px rgba(0, 0, 255, 0.5); /* Blue shadow on hover */
+    text-shadow: 0 0 4px rgba(0, 0, 255, 0.5);
 }
 
 .nav-links .relative .absolute {
@@ -26,8 +26,8 @@
 .nav-links .relative:hover .absolute {
     opacity: 1;
     visibility: visible;
-
 }
+
 /* Navbar styles */
 .navbar {
     list-style: none;
@@ -47,295 +47,273 @@
     color: #000;
 }
 
-/* Submenu styles */
-.submenu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Updated Submenu styles */
+.submenu-hosting {
     position: absolute;
     top: 100%;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-height: 300px; /* Set a reasonable max-height */
-    overflow-y: auto; /* To allow the menu to expand properly */
+    left: -1rem;
+    width: 240px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 0.5rem 0;
 }
 
-.submenu li {
-    width: 200px;
-}
-
-.submenu li a {
-    padding: 1rem;
+.submenu-hosting a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #4a5568;
     text-decoration: none;
-    color: #000;
-    display: block;
-}
-
-/* Show submenu on hover */
-.nav-item:hover .submenu {
-    display: block;
-    max-height: 300px; /* Set a reasonable max-height */
-    overflow-y: auto; /* To allow the menu to expand properly */
-}
-
-/* ==========================
-       Hero Section Styles 
-   ========================== */
-
-/* Hero section background color */
-.bg-gradient-to-r {
-    background-image: linear-gradient(to right, #ff4500, #f0f0f0); /* orangered */
-}
-
-/* ==========================
-        Features Styles 
-   ========================== */
-
-/* Move the features title on top of the features cards */
-.features-title {
-    display: block;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-/* ==========================
-    Hosting Plans Styles
-   ========================== */
-
-/* Center the hosting plans cards on the screen */
-.hosting-plans-container {
-    padding: 2rem 0; /* Padding around the hosting plan section */
-}
-
-.hosting-plans-container .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* This will ensure the cards are responsive */
-    gap: 16px;
-    justify-content: center;
-}
-
-.section-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 2rem; /* 2rem space after the title */
-}
-
-/* Shared Unmanaged Hosting section */
-.shared-unmanaged-hosting-title {
-    margin-bottom: 1rem; /* Space between the title and the cards */
-}
-
-.shared-unmanaged-hosting {
-    margin-bottom: 4rem;
-}
-
-/* ==========================
-    VPS Plans Styles
-   ========================== */
-
-/* Unmanaged VPS Hosting section */
-.unmanaged-vps-hosting-title {
-    margin-bottom: 1rem; /* Space between the title and the cards */
-}
-
-.unmanaged-vps-hosting {
-    margin-bottom: 4rem;
-}
-
-/* ==========================
-       Footer Styles
-   ========================== */
-
-/* ==========================
-       General Styles
-   ========================== */
-
-/* Button hover effects and colors */
-.bg-blue-500:hover {
-    background-color: #007bff; /* Switch to blue on hover */
-}
-
-.bg-blue-500 {
-  background-color: #ffa500; /* Initial orange color */
-}
-
-/* Card hover effects */
-.bg-white:hover{
-    background-color: #ffefd5;
-}
-
-.bg-white .bg-blue-500:hover{
-    background-color: #007bff;
-}
-
-.bg-white .bg-blue-500{
-    background-color: #ff4500;
-}
-
-/* ==========================
-   Responsive Styles 
-   ========================== */
-
-/* Responsive Styles for Small Screens */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-    }
-
-    nav {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-
-    #menu-toggle {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav-links a {
-        padding: 0.5rem 0;
-        text-align: left;
-    }
-
-    /* Hide menu items initially on small screens */
-    #nav-links {
-        display: none;
-    }
-
-    /* Show menu items on small screens when toggled (using JS) */
-    #nav-links.active {
-        display: flex;
-    }
-
-    /* Burger menu centered */
-
-    /* Logo stays on the left */
-    .flex-shrink-0 {
-        order: 1;
-    }
-
-    /* Language switcher, login, and buttons on the right */
-    .flex.items-center {
-        order: 3;
-        margin-left: auto;
-    }
-
-    /* Centered Menu (Dropdown behavior) */
-    #nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 60px; /* Adjust based on navbar height */
-        left: 0;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000; /* Ensure it overlays above other content */
-        transition: max-height 0.3s ease-in-out; /* Smooth menu opening */
-        max-height: 0; /* Initially hidden */
-        overflow: hidden; /* Prevent overflow during animation */
-    }
-
-    #nav-links.active {
-        display: flex;
-        max-height: 300px; /* Adjust based on the expected menu height */
-    }
-    
-    /* Content wrapper styles */
-    #content-wrapper {
-        transition: margin-top 0.3s ease-in-out;
-    }
-  
-    /* Hero section adjustment */
-    .hero {
-        transition: margin-top 0.3s ease-in-out;
-    }
-
-    /* Push content down when menu is active */
-    #nav-links.active + #content-wrapper {
-        margin-top: 300px; /* Same height as the expanded menu */
-    }
-
-    .hosting-plans-container .grid {
-        margin-left: 0; /* Remove margin */
-        padding-left: 1rem;
-        padding-right: 1rem;
-        grid-template-columns: 1fr; /* Stack the cards vertically */
-        gap: 16px; /* Space between each hosting plan card */
-    } 
-}
-
-
-/* Ensure grid takes full width on larger screens */
-.hosting-plans-container {
+    transition: all 0.2s ease;
     width: 100%;
-    /* No need for flex here */
-    padding: 2rem 0;
 }
 
-/* Grid takes full width on large screens */
-@media (min-width: 769px) {
-    .hosting-plans-container .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Horizontal layout */
-        gap: 16px;
-        justify-content: center;
-        margin-left: 17rem; /* Add margin to the left */
-    }
+.submenu-hosting a:hover {
+    background-color: #f7fafc;
+    color: #3182ce;
 }
 
-/* Show hamburger icon on small screens and hide it on large screens */
-@media (min-width: 769px) {
-    #menu-toggle {
-        display: none;
-    }
+.nav-item-hosting {
+    position: relative;
 }
 
-/* Test code */
-
-/* Ensure the parent triggers the submenu */
 .nav-item-hosting:hover .submenu-hosting {
-    display: block;
     opacity: 1;
     visibility: visible;
 }
 
-/* Hide the submenu by default */
-.submenu-hosting {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease; /* Smooth expand animation */
-    position: absolute; /* Or relative, depending on your layout */
-    top: 100%; /* Position below the main nav */
-    left: 0;
-    z-index: 10;
-    background-color: white; /* Adjust to match your design */
-    width: 100%; /* Or desired width */
+/* Content wrapper for submenu push effect */
+#content-wrapper {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
 }
 
-/* Hero section should pull down */
-.hero-section {
-    transition: margin-top 0.3s ease;
+.nav-item-hosting:hover ~ #content-wrapper {
+    transform: translateY(200px);
 }
-
-.nav-item-hosting:hover .hero-section {
-    margin-top: 300px; /* Adjust based on submenu height */
-}
+  /* ==========================
+         Hero Section Styles 
+     ========================== */
+  
+  /* Hero section background color */
+  .bg-gradient-to-r {
+    background-image: linear-gradient(to right, #ff4500, #f0f0f0);
+  }
+  
+  /* ==========================
+          Features Styles 
+     ========================== */
+  
+  /* Move the features title on top of the features cards */
+  .features-title {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* ==========================
+      Hosting Plans Styles
+     ========================== */
+  
+  /* Center the hosting plans cards on the screen */
+  .hosting-plans-container {
+    padding: 2rem 0;
+  }
+  
+  .hosting-plans-container .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Shared Unmanaged Hosting section */
+  .shared-unmanaged-hosting-title {
+    margin-bottom: 1rem;
+  }
+  
+  .shared-unmanaged-hosting {
+    margin-bottom: 4rem;
+  }
+  
+  /* ==========================
+      VPS Plans Styles
+     ========================== */
+  
+  /* Unmanaged VPS Hosting section */
+  .unmanaged-vps-hosting-title {
+    margin-bottom: 1rem;
+  }
+  
+  .unmanaged-vps-hosting {
+    margin-bottom: 4rem;
+  }
+  
+  /* ==========================
+         General Styles
+     ========================== */
+  
+  /* Button hover effects and colors */
+  .bg-blue-500:hover {
+    background-color: #007bff;
+  }
+  
+  .bg-blue-500 {
+    background-color: #ffa500;
+  }
+  
+  /* Card hover effects */
+  .bg-white:hover {
+    background-color: #ffefd5;
+  }
+  
+  .bg-white .bg-blue-500:hover {
+    background-color: #007bff;
+  }
+  
+  .bg-white .bg-blue-500 {
+    background-color: #ff4500;
+  }
+  
+  /* ==========================
+     Responsive Styles 
+     ========================== */
+  
+  /* Responsive Styles for Small Screens */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+  
+    nav {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  
+    #menu-toggle {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+  
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .nav-links a {
+      padding: 0.5rem 0;
+      text-align: left;
+    }
+  
+    #nav-links {
+      display: none;
+    }
+  
+    #nav-links.active {
+      display: flex;
+    }
+  
+    .flex-shrink-0 {
+      order: 1;
+    }
+  
+    .flex.items-center {
+      order: 3;
+      margin-left: auto;
+    }
+  
+    #nav-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+    }
+  
+    #nav-links.active {
+      display: flex;
+      max-height: 300px;
+    }
+    
+    #content-wrapper {
+      transition: margin-top 0.3s ease-in-out;
+    }
+    
+    .hero {
+      transition: margin-top 0.3s ease-in-out;
+    }
+  
+    #nav-links.active + #content-wrapper {
+      margin-top: 300px;
+    }
+  
+    .hosting-plans-container .grid {
+      margin-left: 0;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    } 
+  }
+  
+  .hosting-plans-container {
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  @media (min-width: 769px) {
+    .hosting-plans-container .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+      justify-content: center;
+      margin-left: 17rem;
+    }
+  
+    #menu-toggle {
+      display: none;
+    }
+  }
+  
+  /* Submenu styles */
+  .nav-item-hosting:hover .submenu-hosting {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+  }
+  
+  .hero-section {
+      transition: margin-top 0.3s ease;
+  }
+  
+  .nav-item-hosting:hover .hero-section {
+      margin-top: 300px;
+  }
+  

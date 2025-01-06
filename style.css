@@ -11,6 +11,11 @@
 /* ==========================
        Navbar Styles 
    ========================== */
+nav {
+    position: relative;
+    z-index: 1000;
+    background-color: white;
+}
 
 /* Navbar link hover effect */
 .nav-links a:hover {
@@ -48,6 +53,11 @@
 }
 
 /* Updated Submenu styles */
+.nav-item-hosting {
+    position: relative;
+    z-index: 1001;
+}
+
 .submenu-hosting {
     position: absolute;
     top: 100%;
@@ -58,8 +68,14 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 1002;
     padding: 0.5rem 0;
+    pointer-events: auto;
+}
+
+.submenu-hosting .submenu-content {
+    position: relative;
+    z-index: 1003;
 }
 
 .submenu-hosting a {
@@ -69,6 +85,8 @@
     text-decoration: none;
     transition: all 0.2s ease;
     width: 100%;
+    position: relative;
+    z-index: 1004;
 }
 
 .submenu-hosting a:hover {
@@ -76,240 +94,206 @@
     color: #3182ce;
 }
 
-.nav-item-hosting {
-    position: relative;
-}
-
 .nav-item-hosting:hover .submenu-hosting {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
-/* Content wrapper for submenu push effect */
+/* Content wrapper styles */
 #content-wrapper {
     position: relative;
     z-index: 1;
-    /* transition: transform 0.3s ease; */ /* Removed */
+    transition: margin-top 0.3s ease;
+    pointer-events: auto;
 }
 
-  /* ==========================
-         Hero Section Styles 
-     ========================== */
-  
-  /* Hero section background color */
-  .bg-gradient-to-r {
+.main-container {
+    position: relative;
+    transition: margin-top 0.3s ease;
+    pointer-events: auto;
+}
+
+/* ==========================
+       Hero Section Styles 
+   ========================== */
+.bg-gradient-to-r {
     background-image: linear-gradient(to right, #ff4500, #f0f0f0);
-  }
-  
-  /* ==========================
-          Features Styles 
-     ========================== */
-  
-  /* Move the features title on top of the features cards */
-  .features-title {
+}
+
+/* ==========================
+       Features Styles 
+   ========================== */
+.features-title {
     display: block;
     margin-bottom: 1rem;
     text-align: center;
-  }
-  
-  /* ==========================
-      Hosting Plans Styles
-     ========================== */
-  
-  /* Center the hosting plans cards on the screen */
-  .hosting-plans-container {
+}
+
+/* ==========================
+    Hosting Plans Styles
+   ========================== */
+.hosting-plans-container {
+    width: 100%;
     padding: 2rem 0;
-  }
-  
-  .hosting-plans-container .grid {
+}
+
+.hosting-plans-container .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 16px;
     justify-content: center;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     margin-bottom: 2rem;
-  }
-  
-  /* Shared Unmanaged Hosting section */
-  .shared-unmanaged-hosting-title {
+}
+
+/* Shared Unmanaged Hosting section */
+.shared-unmanaged-hosting-title {
     margin-bottom: 1rem;
-  }
-  
-  .shared-unmanaged-hosting {
+}
+
+.shared-unmanaged-hosting {
     margin-bottom: 4rem;
-  }
-  
-  /* ==========================
-      VPS Plans Styles
-     ========================== */
-  
-  /* Unmanaged VPS Hosting section */
-  .unmanaged-vps-hosting-title {
+}
+
+/* ==========================
+    VPS Plans Styles
+   ========================== */
+.unmanaged-vps-hosting-title {
     margin-bottom: 1rem;
-  }
-  
-  .unmanaged-vps-hosting {
+}
+
+.unmanaged-vps-hosting {
     margin-bottom: 4rem;
-  }
-  
-  /* ==========================
-         General Styles
-     ========================== */
-  
-  /* Button hover effects and colors */
-  .bg-blue-500:hover {
+}
+
+/* ==========================
+       General Styles
+   ========================== */
+/* Button hover effects and colors */
+.bg-blue-500:hover {
     background-color: #007bff;
-  }
-  
-  .bg-blue-500 {
+}
+
+.bg-blue-500 {
     background-color: #ffa500;
-  }
-  
-  /* Card hover effects */
-  .bg-white:hover {
+}
+
+/* Card hover effects */
+.bg-white:hover {
     background-color: #ffefd5;
-  }
-  
-  .bg-white .bg-blue-500:hover {
+}
+
+.bg-white .bg-blue-500:hover {
     background-color: #007bff;
-  }
-  
-  .bg-white .bg-blue-500 {
+}
+
+.bg-white .bg-blue-500 {
     background-color: #ff4500;
-  }
-  
-  /* ==========================
-     Responsive Styles 
-     ========================== */
-  
-  /* Responsive Styles for Small Screens */
-  @media (max-width: 768px) {
+}
+
+/* ==========================
+   Responsive Styles 
+   ========================== */
+@media (max-width: 768px) {
     .container {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
     }
-  
+
     nav {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
-  
+
     #menu-toggle {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
     }
-  
+
     .nav-links {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
     }
-  
+
     .nav-links a {
-      padding: 0.5rem 0;
-      text-align: left;
+        padding: 0.5rem 0;
+        text-align: left;
     }
-  
+
     #nav-links {
-      display: none;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
     }
-  
+
     #nav-links.active {
-      display: flex;
+        display: flex;
+        max-height: 300px;
     }
-  
+
     .flex-shrink-0 {
-      order: 1;
+        order: 1;
     }
-  
+
     .flex.items-center {
-      order: 3;
-      margin-left: auto;
+        order: 3;
+        margin-left: auto;
     }
-  
-    #nav-links {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      transition: max-height 0.3s ease-in-out;
-      max-height: 0;
-      overflow: hidden;
-    }
-  
-    #nav-links.active {
-      display: flex;
-      max-height: 300px;
-    }
-    
+
     #content-wrapper {
-      transition: margin-top 0.3s ease-in-out;
+        transition: margin-top 0.3s ease-in-out;
     }
-    
+
     .hero {
-      transition: margin-top 0.3s ease-in-out;
+        transition: margin-top 0.3s ease-in-out;
     }
-  
+
     #nav-links.active + #content-wrapper {
-      margin-top: 300px;
+        margin-top: 300px;
     }
-  
+
     .hosting-plans-container .grid {
-      margin-left: 0;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    } 
-  }
-  
-  .hosting-plans-container {
-    width: 100%;
-    padding: 2rem 0;
-  }
-  
-  @media (min-width: 769px) {
-    .hosting-plans-container .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 16px;
-      justify-content: center;
-      margin-left: 17rem;
+        margin-left: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
-  
+}
+
+@media (min-width: 769px) {
+    .hosting-plans-container .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 16px;
+        justify-content: center;
+        margin-left: 17rem;
+    }
+
     #menu-toggle {
-      display: none;
+        display: none;
     }
-  }
-  
-  /* Submenu styles */
-  .nav-item-hosting:hover .submenu-hosting {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-  }
-  
-  .hero-section {
-      transition: margin-top 0.3s ease;
-  }
-  
-  .nav-item-hosting:hover .hero-section {
-      margin-top: 300px;
-  }
+}

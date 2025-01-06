@@ -1,58 +1,41 @@
-function toggleMenu() {
-  const navLinks = document.getElementById('nav-links');
-  const contentWrapper = document.getElementById('content-wrapper');
-
-  // Toggle the active class on the menu
-  navLinks.classList.toggle('active');
-
-  // Push the content wrapper down based on the menu's height
-  if (navLinks.classList.contains('active')) {
-    contentWrapper.style.marginTop = `${navLinks.offsetHeight}px`;
-  } else {
-    contentWrapper.style.marginTop = '0';
-  }
-}
-
-document.getElementById('menu-toggle').addEventListener('click', toggleMenu);
-
-window.addEventListener('resize', function () {
-  const navLinks = document.getElementById('nav-links');
-  const contentWrapper = document.getElementById('content-wrapper');
-
-  if (navLinks.classList.contains('active') && window.innerWidth < 768) {
-    contentWrapper.style.marginTop = `${navLinks.offsetHeight}px`;
-  } else {
-    contentWrapper.style.marginTop = '0';
-  }
-});
-
-/* View Plans Button */
 document.addEventListener('DOMContentLoaded', function() {
   const viewPlansBtn = document.getElementById('view-plans-btn');
   const hostingPlansSection = document.getElementById('hosting-plans');
+  const hostingNavItem = document.querySelector('.nav-item-hosting');
+  const submenu = hostingNavItem.querySelector('.submenu-hosting');
+  const contentWrapper = document.getElementById('content-wrapper');
+  const mainContainer = document.querySelector('.main-container');
 
-  viewPlansBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    hostingPlansSection.scrollIntoView({ behavior: 'smooth' });
+  // View Plans button functionality
+  viewPlansBtn?.addEventListener('click', function(e) {
+      e.preventDefault();
+      hostingPlansSection.scrollIntoView({ behavior: 'smooth' });
   });
 
-   // Hosting submenu functionality
-    const hostingNavItem = document.querySelector('.nav-item-hosting');
-    const submenu = hostingNavItem.querySelector('.submenu-hosting');
-    const contentWrapper = document.getElementById('content-wrapper');
-   
-    function toggleHostingSubmenu(event) {
-        if (event.type === 'mouseenter') {
-            submenu.style.display = 'block';
-            const submenuHeight = submenu.offsetHeight;
-            contentWrapper.style.marginTop = `${submenuHeight}px`;
-            event.stopPropagation();
-        } else {
-            submenu.style.display = 'none';
-            contentWrapper.style.marginTop = '0';
-         }
-     }
-    
-      hostingNavItem.addEventListener('mouseenter', toggleHostingSubmenu);
-     hostingNavItem.addEventListener('mouseleave', toggleHostingSubmenu);
-  });
+  // Hosting submenu functionality
+  function handleSubmenuToggle(show) {
+      if (show) {
+          submenu.style.opacity = '1';
+          submenu.style.visibility = 'visible';
+          const submenuHeight = submenu.offsetHeight;
+          if (contentWrapper) {
+              contentWrapper.style.marginTop = `${submenuHeight}px`;
+          }
+          if (mainContainer) {
+              mainContainer.style.marginTop = `${submenuHeight}px`;
+          }
+      } else {
+          submenu.style.opacity = '0';
+          submenu.style.visibility = 'hidden';
+          if (contentWrapper) {
+              contentWrapper.style.marginTop = '0';
+          }
+          if (mainContainer) {
+              mainContainer.style.marginTop = '0';
+          }
+      }
+  }
+
+  hostingNavItem.addEventListener('mouseenter', () => handleSubmenuToggle(true));
+  hostingNavItem.addEventListener('mouseleave', () => handleSubmenuToggle(false));
+});

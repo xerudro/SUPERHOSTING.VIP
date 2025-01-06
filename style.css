@@ -1,7 +1,7 @@
 /* ==========================
-       General Styles
+    General Styles
    ========================== */
-   body {
+body {
     font-family: var(--font-stack);
     color: var(--text-color);
     background-color: #f4f4f4;
@@ -9,15 +9,16 @@
 }
 
 /* ==========================
-       Navbar Styles 
+    Navbar Styles 
    ========================== */
 nav {
     position: relative;
     z-index: 1000;
     background-color: white;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
-/* Navbar link hover effect */
 .nav-links a:hover {
     text-shadow: 0 0 4px rgba(0, 0, 255, 0.5);
 }
@@ -33,7 +34,6 @@ nav {
     visibility: visible;
 }
 
-/* Navbar styles */
 .navbar {
     list-style: none;
     padding: 0;
@@ -52,7 +52,6 @@ nav {
     color: #000;
 }
 
-/* Updated Submenu styles */
 .nav-item-hosting {
     position: relative;
     z-index: 1001;
@@ -97,32 +96,24 @@ nav {
 .nav-item-hosting:hover .submenu-hosting {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
 }
 
 /* Content wrapper styles */
-#content-wrapper {
-    position: relative;
-    z-index: 1;
-    transition: margin-top 0.3s ease;
-    pointer-events: auto;
-}
-
-.main-container {
+#content-wrapper, .main-container {
     position: relative;
     transition: margin-top 0.3s ease;
     pointer-events: auto;
 }
 
 /* ==========================
-       Hero Section Styles 
+    Hero Section Styles 
    ========================== */
 .bg-gradient-to-r {
     background-image: linear-gradient(to right, #ff4500, #f0f0f0);
 }
 
 /* ==========================
-       Features Styles 
+    Features Styles 
    ========================== */
 .features-title {
     display: block;
@@ -152,49 +143,35 @@ nav {
     margin-bottom: 2rem;
 }
 
-/* Shared Unmanaged Hosting section */
-.shared-unmanaged-hosting-title {
+.shared-unmanaged-hosting-title, .unmanaged-vps-hosting-title {
     margin-bottom: 1rem;
 }
 
-.shared-unmanaged-hosting {
+.shared-unmanaged-hosting, .unmanaged-vps-hosting {
     margin-bottom: 4rem;
 }
 
 /* ==========================
-    VPS Plans Styles
+    General Styles
    ========================== */
-.unmanaged-vps-hosting-title {
-    margin-bottom: 1rem;
-}
-
-.unmanaged-vps-hosting {
-    margin-bottom: 4rem;
-}
-
-/* ==========================
-       General Styles
-   ========================== */
-/* Button hover effects and colors */
-.bg-blue-500:hover {
-    background-color: #007bff;
-}
-
 .bg-blue-500 {
     background-color: #ffa500;
 }
 
-/* Card hover effects */
+.bg-blue-500:hover {
+    background-color: #007bff;
+}
+
 .bg-white:hover {
     background-color: #ffefd5;
 }
 
-.bg-white .bg-blue-500:hover {
-    background-color: #007bff;
-}
-
 .bg-white .bg-blue-500 {
     background-color: #ff4500;
+}
+
+.bg-white .bg-blue-500:hover {
+    background-color: #007bff;
 }
 
 /* ==========================
@@ -202,98 +179,89 @@ nav {
    ========================== */
 @media (max-width: 768px) {
     .container {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-    }
-
-    nav {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+     flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+     position: relative;
     }
 
     #menu-toggle {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 10;
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     z-index: 10;
     }
 
     .nav-links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     margin-top: 10px;
     }
 
     .nav-links a {
-        padding: 0.5rem 0;
-        text-align: left;
+     padding: 0.5rem 0;
+     text-align: left;
     }
 
     #nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        transition: max-height 0.3s ease-in-out;
-        max-height: 0;
-        overflow: hidden;
+     display: none;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     position: absolute;
+     top: 60px;
+     left: 0;
+     width: 100%;
+     background-color: white;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     z-index: 1002;
+     transition: max-height 0.3s ease-in-out;
+     max-height: 0;
+     overflow: hidden;
     }
 
     #nav-links.active {
-        display: flex;
-        max-height: 300px;
+     display: flex;
+     max-height: 300px;
     }
 
     .flex-shrink-0 {
-        order: 1;
+     order: 1;
     }
 
     .flex.items-center {
-        order: 3;
-        margin-left: auto;
+     order: 3;
+     margin-left: auto;
     }
 
-    #content-wrapper {
-        transition: margin-top 0.3s ease-in-out;
-    }
-
-    .hero {
-        transition: margin-top 0.3s ease-in-out;
+    #content-wrapper, .hero {
+     transition: margin-top 0.3s ease-in-out;
     }
 
     #nav-links.active + #content-wrapper {
-        margin-top: 300px;
+     margin-top: 300px;
     }
 
     .hosting-plans-container .grid {
-        margin-left: 0;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        grid-template-columns: 1fr;
-        gap: 16px;
+     margin-left: 0;
+     padding-left: 1rem;
+     padding-right: 1rem;
+     grid-template-columns: 1fr;
+     gap: 16px;
+    }
+
+    .submenu-hosting {
+     display: none; /* Hide submenu in burger menu */
     }
 }
 
 @media (min-width: 769px) {
     .hosting-plans-container .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 16px;
-        justify-content: center;
-        margin-left: 17rem;
+     margin-left: 17rem;
     }
 
     #menu-toggle {
-        display: none;
+     display: none;
     }
 }

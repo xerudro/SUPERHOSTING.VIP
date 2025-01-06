@@ -89,12 +89,9 @@
 #content-wrapper {
     position: relative;
     z-index: 1;
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease; */ /* Removed */
 }
 
-.nav-item-hosting:hover ~ #content-wrapper {
-    transform: translateY(200px);
-}
   /* ==========================
          Hero Section Styles 
      ========================== */
@@ -316,4 +313,3 @@
   .nav-item-hosting:hover .hero-section {
       margin-top: 300px;
   }
-  

@@ -39,19 +39,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Hosting submenu functionality
   const hostingNavItem = document.querySelector('.nav-item-hosting');
   const submenu = hostingNavItem.querySelector('.submenu-hosting');
-  const heroSection = document.querySelector('.hero-section');
   const contentWrapper = document.getElementById('content-wrapper');
 
   hostingNavItem.addEventListener('mouseenter', function() {
-    submenu.style.display = 'block';
-    const submenuHeight = submenu.offsetHeight;
-    heroSection.style.marginTop = `${submenuHeight}px`;
-    contentWrapper.style.marginTop = `${submenuHeight}px`;
-  });
+      submenu.style.display = 'block';
+      const submenuHeight = submenu.offsetHeight;
+      contentWrapper.style.transform = `translateY(${submenuHeight}px)`;
+    });
 
   hostingNavItem.addEventListener('mouseleave', function() {
-    submenu.style.display = 'none';
-    heroSection.style.marginTop = '0';
-    contentWrapper.style.marginTop = '0';
+      submenu.style.display = 'none';
+      contentWrapper.style.transform = `translateY(0)`;
   });
 });

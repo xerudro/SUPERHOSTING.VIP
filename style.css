@@ -287,8 +287,8 @@ nav {
         margin-right: 5rem;
     }
     
-     .logo-wrapper{
-        margin-left: 5rem;
+    .navbar-actions select{
+        padding: 0.40rem 0.5rem;
     }
 }
 
@@ -302,6 +302,12 @@ nav {
   .navbar-actions-wrapper {
      right: 20px; /* Move the whole div to right on smaller screens */
     }
+    @media (min-width: 769px) {
+        .navbar-actions-wrapper{
+          margin-left: 10rem;
+          margin-right: 1rem; /* Less spacing from the right side */
+       }
+              }
   #menu-toggle {
         left: 20px; /* move the burger menu to the left on smaller screens */
     }

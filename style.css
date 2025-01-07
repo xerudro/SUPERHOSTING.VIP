@@ -1,7 +1,7 @@
 /* ==========================
     General Styles
    ========================== */
-body {
+   body {
     font-family: var(--font-stack);
     color: var(--text-color);
     background-color: #f4f4f4;
@@ -179,89 +179,130 @@ nav {
    ========================== */
 @media (max-width: 768px) {
     .container {
-     flex-direction: row;
-     align-items: center;
-     justify-content: space-between;
-     position: relative;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
     }
 
     #menu-toggle {
-     position: absolute;
-     left: 50%;
-     transform: translateX(-50%);
-     z-index: 10;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
     }
 
     .nav-links {
-     display: flex;
-     flex-direction: column;
-     width: 100%;
-     margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .nav-links a {
-     padding: 0.5rem 0;
-     text-align: left;
+        padding: 0.5rem 0;
+        text-align: left;
     }
 
     #nav-links {
-     display: none;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     position: absolute;
-     top: 60px;
-     left: 0;
-     width: 100%;
-     background-color: white;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-     z-index: 1002;
-     transition: max-height 0.3s ease-in-out;
-     max-height: 0;
-     overflow: hidden;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1002;
+        transition: max-height 0.3s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
     }
 
     #nav-links.active {
-     display: flex;
-     max-height: 300px;
+        display: flex;
+        max-height: 300px;
+    }
+    
+    .navbar-actions-wrapper{
+        order: 3;
+        margin-left: auto;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        
+    }
+    
+    .navbar-actions select{
+        padding: 0.40rem 0.5rem;
+    }
+    .navbar-actions a{
+        padding: 0.20rem;
+        font-size: 0.80rem;
     }
 
     .flex-shrink-0 {
-     order: 1;
+        order: 1;
     }
 
     .flex.items-center {
-     order: 3;
-     margin-left: auto;
+        order: 3;
+        margin-left: auto;
     }
 
     #content-wrapper, .hero {
-     transition: margin-top 0.3s ease-in-out;
+        transition: margin-top 0.3s ease-in-out;
     }
 
     #nav-links.active + #content-wrapper {
-     margin-top: 300px;
+        margin-top: 300px;
     }
 
     .hosting-plans-container .grid {
-     margin-left: 0;
-     padding-left: 1rem;
-     padding-right: 1rem;
-     grid-template-columns: 1fr;
-     gap: 16px;
+        margin-left: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .submenu-hosting {
-     display: none; /* Hide submenu in burger menu */
+        display: none; /* Hide submenu in burger menu */
     }
 }
 
 @media (min-width: 769px) {
     .hosting-plans-container .grid {
-     margin-left: 17rem;
+        margin-left: 17rem;
     }
 
     #menu-toggle {
-     display: none;
+        display: none;
+    }
+    
+     .navbar-actions-wrapper{
+        margin-left: auto;
+        margin-right: 5rem;
+    }
+    
+     .logo-wrapper{
+        margin-left: 5rem;
+    }
+}
+
+/* Additional styles for hosting card text wrapping */
+.bg-white ul.list-disc li {
+    display: block;
+}
+
+/* Adjusted spacing for burger and lang switcher on smaller screens */
+@media (max-width: 768px){
+  .navbar-actions-wrapper {
+     right: 20px; /* Move the whole div to right on smaller screens */
+    }
+  #menu-toggle {
+        left: 20px; /* move the burger menu to the left on smaller screens */
     }
 }

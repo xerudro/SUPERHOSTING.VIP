@@ -35,4 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ensure submenu behavior adapts to screen size
     window.addEventListener('resize', disableSubmenuOnSmallScreens);
     disableSubmenuOnSmallScreens();
+
+    
 });
+

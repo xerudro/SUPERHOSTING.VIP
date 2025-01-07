@@ -306,3 +306,27 @@ nav {
         left: 20px; /* move the burger menu to the left on smaller screens */
     }
 }
+
+/* Hover effect for feature cards */
+.feature-card:hover {
+  background-color: #FFA07A;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for hosting plan cards */
+.bg-white.rounded-lg.shadow-md:hover {
+  background-color: #FFA07A;
+   transition: background-color 0.3s ease;
+}
+section:hover{
+    background-color: #add8e6;
+     transition: background-color 0.3s ease;
+}
+/* Section background hover effect */
+#features-section {
+    transition: background-color 0.3s ease;
+}
+
+#features-section:hover {
+    background-color: #add8e6; 
+}

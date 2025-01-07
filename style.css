@@ -1,7 +1,7 @@
 /* ==========================
     General Styles
    ========================== */
-   body {
+body {
     font-family: var(--font-stack);
     color: var(--text-color);
     background-color: #f4f4f4;
@@ -15,8 +15,7 @@ nav {
     position: relative;
     z-index: 1000;
     background-color: white;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
 }
 
 .nav-links a:hover {
@@ -39,6 +38,7 @@ nav {
     padding: 0;
     margin: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 .nav-item {
@@ -187,8 +187,8 @@ nav {
 
     #menu-toggle {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 20px;
+        transform: translateX(0);
         z-index: 10;
     }
 
@@ -226,19 +226,19 @@ nav {
         max-height: 300px;
     }
     
-    .navbar-actions-wrapper{
+    .navbar-actions-wrapper {
         order: 3;
         margin-left: auto;
         position: absolute;
-        right: 0;
+        right: 20px;
         top: 10px;
-        
     }
     
-    .navbar-actions select{
+    .navbar-actions select {
         padding: 0.40rem 0.5rem;
     }
-    .navbar-actions a{
+
+    .navbar-actions a {
         padding: 0.20rem;
         font-size: 0.80rem;
     }
@@ -275,19 +275,20 @@ nav {
 
 @media (min-width: 769px) {
     .hosting-plans-container .grid {
-        margin-left: 17rem;
+        margin-left: 10rem;
+        padding-right: 10rem;
     }
 
     #menu-toggle {
         display: none;
     }
     
-     .navbar-actions-wrapper{
+    .navbar-actions-wrapper {
         margin-left: auto;
         margin-right: 5rem;
     }
     
-    .navbar-actions select{
+    .navbar-actions select {
         padding: 0.40rem 0.5rem;
     }
 }
@@ -297,37 +298,23 @@ nav {
     display: block;
 }
 
-/* Adjusted spacing for burger and lang switcher on smaller screens */
-@media (max-width: 768px){
-  .navbar-actions-wrapper {
-     right: 20px; /* Move the whole div to right on smaller screens */
-    }
-    @media (min-width: 769px) {
-        .navbar-actions-wrapper{
-          margin-left: 10rem;
-          margin-right: 1rem; /* Less spacing from the right side */
-       }
-              }
-  #menu-toggle {
-        left: 20px; /* move the burger menu to the left on smaller screens */
-    }
-}
-
 /* Hover effect for feature cards */
 .feature-card:hover {
-  background-color: #FFA07A;
-  transition: background-color 0.3s ease;
+    background-color: #FFA07A;
+    transition: background-color 0.3s ease;
 }
 
 /* Hover effect for hosting plan cards */
 .bg-white.rounded-lg.shadow-md:hover {
-  background-color: #FFA07A;
-   transition: background-color 0.3s ease;
+    background-color: #FFA07A;
+    transition: background-color 0.3s ease;
 }
-section:hover{
+
+section:hover {
     background-color: #add8e6;
-     transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
+
 /* Section background hover effect */
 #features-section {
     transition: background-color 0.3s ease;
@@ -335,4 +322,42 @@ section:hover{
 
 #features-section:hover {
     background-color: #add8e6; 
+}
+@media (min-width: 1024px) {
+    .hosting-plans-container .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Update the right-aligned actions container */
+.flex.items-center {
+    display: flex;
+    gap: 0.25rem;
+}
+
+/* Responsive button styles */
+@media (max-width: 375px) {
+    .flex.items-center {
+        gap: 0.05rem;
+    }
+    
+    /* Smaller text and padding for very small screens */
+    .bg-blue-500 {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    /* Hide button text, show icon instead */
+    .get-started-text {
+        display: none;
+    }
+    
+ 
+
+/* Medium screens */
+@media (min-width: 375px) and (max-width: 768px) {
+    .bg-blue-500 {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+}
 }

@@ -360,4 +360,66 @@ section:hover {
         padding: 0.5rem 1rem;
     }
 }
+
+/* Navbar Actions Styles */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-actions select {
+    min-width: 80px;
+}
+
+.navbar-actions a {
+    white-space: nowrap;
+}
+
+.navbar-actions a:last-child {
+    padding: 0.5rem 1rem;
+}
+
+/* Responsive Navbar Styles */
+@media (max-width: 1023px) {
+    .navbar-actions {
+        position: fixed;
+        right: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .navbar-actions select {
+        font-size: 0.875rem;
+        padding: 0.375rem 0.5rem;
+    }
+    
+    .navbar-actions a {
+        font-size: 0.875rem;
+    }
+    
+    .navbar-actions a:last-child {
+        padding: 0.375rem 0.75rem;
+    }
+}
+
+@media (max-width: 639px) {
+    .navbar-actions {
+        gap: 0.5rem;
+    }
+    
+    .navbar-actions select,
+    .navbar-actions a {
+        font-size: 0.75rem;
+    }
+    
+    .get-started-text {
+        display: none;
+    }
+    
+    .navbar-actions a {
+        padding: 0.375rem 0.5rem;
+    }
+}
 }

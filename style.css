@@ -475,4 +475,52 @@ section:hover {
         padding: 0.375rem 0.5rem;
     }
 }
+@media (max-width: 1024px) {
+    #menu-toggle {
+        display: block; /* Show burger menu on screens smaller than 1024px */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links on smaller screens */
+    }
+
+    #nav-links.active {
+        display: flex; /* Show nav links when burger menu is active */
+    }
+}
+
+@media (min-width: 1025px) {
+    #menu-toggle {
+        display: none; /* Hide burger menu on larger screens */
+    }
+
+    .nav-links {
+        display: flex; /* Show nav links on larger screens */
+    }
+}
+}
+/* Hide burger menu on larger screens */
+@media (min-width: 1024px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex; /* Show nav links on larger screens */
+    }
+}
+
+/* Show burger menu and hide nav links on smaller screens */
+@media (max-width: 1023px) {
+    #menu-toggle {
+        display: block; /* Show burger menu */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links */
+    }
+
+    #nav-links.active {
+        display: flex; /* Show nav links when burger menu is active */
+    }
 }

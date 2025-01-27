@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Prevent submenu dropdown in mobile view
     function handleHostingClick(event) {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 1024) {
             // Mobile view: treat hosting as a simple link
             window.location.href = '#'; // Replace '#' with your desired link
             event.preventDefault();
         }
     }
 
-    // Show/hide submenu on hover
+    // Show/hide submenu on hover (for larger screens)
     function handleSubmenuVisibility(show) {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1024) {
             submenu.style.opacity = show ? '1' : '0';
             submenu.style.visibility = show ? 'visible' : 'hidden';
             contentWrapper.style.marginTop = show ? `${submenu.offsetHeight}px` : '0';
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adjust on resize
     window.addEventListener('resize', function () {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1024) {
             // Reset styles for desktop view
             submenu.style.opacity = '0';
             submenu.style.visibility = 'hidden';
